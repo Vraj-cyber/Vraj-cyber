@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="245" viewBox="0 0 1100 245" role="img" aria-labelledby="t d">
+<title id="t">V. Vrajesh GitHub profile</title><desc id="d">Minimal dark navy animated header introducing V. Vrajesh as an AI and bioengineering builder.</desc>
+<defs><linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#0B1521"/><stop offset="1" stop-color="#112437"/></linearGradient><linearGradient id="ln"><stop stop-color="#255563"/><stop offset=".5" stop-color="#67D8D4"/><stop offset="1" stop-color="#255563"/></linearGradient></defs>
+<rect x="1" y="1" width="1098" height="243" rx="18" fill="url(#bg)" stroke="#284253" stroke-width="2"/>
+<circle cx="1017" cy="65" r="48" fill="none" stroke="#24485B" stroke-width="1"/><circle cx="1017" cy="65" r="29" fill="none" stroke="#31596A" stroke-width="1"/><circle cx="1017" cy="65" r="5" fill="#67D8D4"><animate attributeName="opacity" values=".35;1;.35" dur="4s" repeatCount="indefinite"/></circle>
+<rect x="48" y="47" width="5" height="47" rx="2" fill="#67D8D4"/>
+<text x="75" y="87" font-family="Segoe UI,Arial,sans-serif" font-size="47" font-weight="650" fill="#F1F7FA">V. Vrajesh</text>
+<text x="77" y="127" font-family="Segoe UI,Arial,sans-serif" font-size="20" fill="#67D8D4" letter-spacing="1.5">AI  ·  BIOENGINEERING  ·  BUILDER</text>
+<text x="77" y="170" font-family="Segoe UI,Arial,sans-serif" font-size="18" fill="#BED0DB">Exploring complex systems. Building useful things.</text>
+<path d="M77 199 H630" stroke="url(#ln)" stroke-width="2" stroke-linecap="round" stroke-dasharray="90 18" opacity=".65"><animate attributeName="stroke-dashoffset" from="108" to="0" dur="12s" repeatCount="indefinite"/></path>
+<text x="965" y="193" font-family="Consolas,monospace" font-size="17" fill="#8DAAB9" text-anchor="middle">@Vraj-cyber</text>
+</svg>
