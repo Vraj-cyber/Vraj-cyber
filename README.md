@@ -1,8 +1,12 @@
 <p align="center">
-  <img src="./assets/dashboard-8b7bac24d4d5.svg" width="100%" alt="V. Vrajesh (@Vraj-cyber). AI, bioengineering and useful software. Dashboard with real GitHub metrics, 3D contribution history, public code languages and ongoing projects: Nova, BODY//CONTROL and a public portfolio." />
+  <img src="./assets/dashboard-8b7bac24d4d5.svg" width="100%" alt="V. Vrajesh (@Vraj-cyber). AI, bioengineering and useful software. Dashboard with real GitHub metrics, public code languages and ongoing projects: Nova, BODY//CONTROL and a public portfolio." />
 </p>
 
 <p align="center"><sub><a href="https://github.com/Vraj-cyber?tab=repositories">Repositories</a> · <a href="https://github.com/Vraj-cyber/vvrajesh-website-">Portfolio source</a> · <a href="./assets/stats.json">Live data</a> · <a href="https://github.com/Vraj-cyber/Vraj-cyber/actions/workflows/profile-3d.yml">Daily updates</a></sub></p>
+
+### Contributions in 3D
+
+<img src="./profile-3d-contrib/profile-night-green.svg" alt="Real GitHub contribution history in the original 3D calendar, with activity radar and language chart" width="100%" />
 
 <!-- Dashboard is a static SVG refreshed daily by GitHub Actions.
      Metrics come from GitHub APIs; contribution geometry comes from

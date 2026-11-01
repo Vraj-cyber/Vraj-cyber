@@ -169,11 +169,10 @@ def main():
     for name,(body,w,h,title) in panels.items(): Path('assets',name).write_text(svg(body,w,h,title,description))
     # Preserve stats.svg as an independently usable compact metrics/profile card.
     Path('assets/stats.svg').write_text(Path('assets/profile-card.svg').read_text())
-    body=f'<rect width="1000" height="732" fill="{BG}"/>'+panels['profile-card.svg'][0]
-    body+='<g transform="translate(0 244)">'+panels['contributions.svg'][0]+'</g>'
-    body+='<g transform="translate(0 468)">'+panels['languages.svg'][0]+'</g>'
-    body+='<g transform="translate(456 468)">'+panels['projects.svg'][0]+'</g>'
-    dashboard=svg(body,1000,732,'V. Vrajesh · engineering dashboard',description)
+    body=f'<rect width="1000" height="508" fill="{BG}"/>'+panels['profile-card.svg'][0]
+    body+='<g transform="translate(0 244)">'+panels['languages.svg'][0]+'</g>'
+    body+='<g transform="translate(456 244)">'+panels['projects.svg'][0]+'</g>'
+    dashboard=svg(body,1000,508,'V. Vrajesh · engineering dashboard',description)
     Path('assets/dashboard.svg').write_text(dashboard)
     # Content-addressed URLs avoid stale GitHub raw/CDN/browser image caches.
     digest=hashlib.sha256(dashboard.encode()).hexdigest()[:12]
