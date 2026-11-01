@@ -7,6 +7,8 @@ emphasizes nonzero columns without changing dates, counts, or relative heights.
 import base64
 import datetime as dt
 import html
+import hashlib
+import re
 import json
 from pathlib import Path
 import xml.etree.ElementTree as ET
@@ -82,6 +84,8 @@ def contribution(data):
     # Retain all 365 original days. Magnify the height above the zero baseline
     # uniformly, keeping the original relative contribution encoding intact.
     import re
+    maximum=max(float(c.get('height'))-2.6 for g in calendar for c in g if 'cont-left-' in c.get('class',''))
+    height_scale=min(6,44/(maximum*1.15*.55)) if maximum>0 else 6
     for day in calendar:
         for child in list(day):
             if child.tag.endswith('}animateTransform'):
@@ -89,7 +93,7 @@ def contribution(data):
         sides=[c for c in day if 'cont-left-' in c.get('class','') or 'cont-right-' in c.get('class','')]
         if sides:
             old=float(sides[0].get('height'))
-            new=2.6+6*(old-2.6)
+            new=2.6+height_scale*(old-2.6)
             if old>2.6:
                 xy=re.fullmatch(r'translate\(([-.0-9]+) ([-.0-9]+)\)',day.get('transform',''))
                 if not xy: raise ValueError('Unexpected upstream calendar transform')
@@ -115,7 +119,7 @@ def contribution(data):
         day=dt.date(start.year+month_index//12,month_index%12+1,1)
         x=134+max(0,(day-start).days)/7*14.8
         result+=text(round(x,1),194,day.strftime('%b'),10,'#819EAF',anchor='middle')
-    result+=text(970,194,'Height emphasis ×6',8,'#819EAF',anchor='end')
+    result+=text(970,194,f'Height emphasis ×{height_scale:.1f}',8,'#819EAF',anchor='end')
     result+=text(970,207,f'{start:%d %b %Y} – {end:%d %b %Y}',8,'#819EAF',anchor='end')
     return result
 
@@ -169,7 +173,16 @@ def main():
     body+='<g transform="translate(0 244)">'+panels['contributions.svg'][0]+'</g>'
     body+='<g transform="translate(0 468)">'+panels['languages.svg'][0]+'</g>'
     body+='<g transform="translate(456 468)">'+panels['projects.svg'][0]+'</g>'
-    Path('assets/dashboard.svg').write_text(svg(body,1000,732,'V. Vrajesh · engineering dashboard',description))
+    dashboard=svg(body,1000,732,'V. Vrajesh · engineering dashboard',description)
+    Path('assets/dashboard.svg').write_text(dashboard)
+    # Content-addressed URLs avoid stale GitHub raw/CDN/browser image caches.
+    digest=hashlib.sha256(dashboard.encode()).hexdigest()[:12]
+    filename=f'dashboard-{digest}.svg'
+    for previous in Path('assets').glob('dashboard-*.svg'):
+        if re.fullmatch(r'dashboard-[0-9a-f]{12}\.svg',previous.name):previous.unlink()
+    Path('assets',filename).write_text(dashboard)
+    readme=Path('README.md')
+    readme.write_text(re.sub(r'\./assets/dashboard(?:-[0-9a-f]{12})?\.svg(?:\?version=\d+)?',f'./assets/{filename}',readme.read_text()))
     print('Rendered dashboard and modular panels from current GitHub data and original 3D geometry')
 
 
