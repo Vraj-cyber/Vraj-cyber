@@ -116,7 +116,7 @@ def contribution(data):
         x=134+max(0,(day-start).days)/7*14.8
         result+=text(round(x,1),194,day.strftime('%b'),10,'#819EAF',anchor='middle')
     result+=text(970,194,'Height emphasis ×6',8,'#819EAF',anchor='end')
-    result+=text(970,52,f'{start:%d %b %Y} – {end:%d %b %Y}',10,'#819EAF',anchor='end')
+    result+=text(970,207,f'{start:%d %b %Y} – {end:%d %b %Y}',8,'#819EAF',anchor='end')
     return result
 
 
