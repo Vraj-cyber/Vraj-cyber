@@ -1,7 +1,8 @@
 """Compose GitHub-safe SVG panels without external CSS, fonts, or image requests.
 
 The calendar geometry comes directly from github-profile-3d-contrib output.
-A camera transform flattens its viewing angle; contribution heights are unchanged.
+A camera transform flattens its viewing angle. A uniform vertical display scale
+emphasizes nonzero columns without changing dates, counts, or relative heights.
 """
 import base64
 import datetime as dt
@@ -78,7 +79,26 @@ def profile(data):
 def contribution(data):
     root=ET.parse('profile-3d-contrib/profile-night-green.svg').getroot()
     calendar=next(c for c in root if c.tag.endswith('}g'))
-    # Keep every original day's geometry; only change palette and camera angle.
+    # Retain all 365 original days. Magnify the height above the zero baseline
+    # uniformly, keeping the original relative contribution encoding intact.
+    import re
+    for day in calendar:
+        for child in list(day):
+            if child.tag.endswith('}animateTransform'):
+                day.remove(child)
+        sides=[c for c in day if 'cont-left-' in c.get('class','') or 'cont-right-' in c.get('class','')]
+        if sides:
+            old=float(sides[0].get('height'))
+            new=2.6+6*(old-2.6)
+            if old>2.6:
+                xy=re.fullmatch(r'translate\(([-.0-9]+) ([-.0-9]+)\)',day.get('transform',''))
+                if not xy: raise ValueError('Unexpected upstream calendar transform')
+                day.set('transform',f'translate({xy[1]} {float(xy[2])-(new-old)*1.15:.2f})')
+            for side in sides:
+                side.set('height',f'{new:.2f}')
+                for child in list(side):
+                    if child.tag.endswith('}animate'):side.remove(child)
+    # The calendar uses a teal palette and a low, wide camera angle.
     palette=[('#173D48','#102E39','#0D2631'),('#227C80','#1C626A','#174D59'),('#2CB5AF','#238D90','#1B717A'),('#41D6C6','#2CAEAA','#258B92'),('#67EBDD','#41C7BE','#2AA29F')]
     styles=''.join(f'.cont-{side}-{i}{{fill:{color}}}' for i,colors in enumerate(palette) for side,color in zip(['top','left','right'],colors))
     result=box(1,1,998,210,BG)+f'<style>{styles}</style>'
@@ -95,6 +115,7 @@ def contribution(data):
         day=dt.date(start.year+month_index//12,month_index%12+1,1)
         x=134+max(0,(day-start).days)/7*14.8
         result+=text(round(x,1),194,day.strftime('%b'),10,'#819EAF',anchor='middle')
+    result+=text(970,194,'Height emphasis ×6',8,'#819EAF',anchor='end')
     result+=text(970,52,f'{start:%d %b %Y} – {end:%d %b %Y}',10,'#819EAF',anchor='end')
     return result
 
