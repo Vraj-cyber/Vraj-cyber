@@ -1,52 +1,45 @@
 <div align="center">
-
-<img src="./assets/header.svg" alt="V. Vrajesh — AI, Bioengineering & Building" width="100%" />
+  <img src="./assets/header.svg" alt="V. Vrajesh · @Vraj-cyber — AI, Bioengineering, Systems Biology and Software Development" width="100%" />
+  <br><br>
+  <a href="https://github.com/Vraj-cyber?tab=repositories">Repositories</a> &nbsp;·&nbsp; <a href="https://github.com/Vraj-cyber/vvrajesh-website-">Portfolio source</a>
+</div>
 
 <br>
 
-<sub>Exploring the intersection of artificial intelligence, biology and useful software.</sub>
+### About Me
 
-<br><br>
+I'm V. Vrajesh. I explore the intersection of artificial intelligence, bioengineering, and systems biology, and build useful software tools. I'm especially interested in turning complex ideas into intuitive, interactive experiences.
 
-<a href="https://github.com/Vraj-cyber?tab=repositories">Repositories</a> &nbsp;·&nbsp; <a href="https://github.com/Vraj-cyber/vvrajesh-website-">Portfolio source</a>
+### Technologies and Tools
 
-</div>
+`Python` · `JavaScript` · `Git` · `GitHub` · `Web development`
 
----
+<sub>Python for my ongoing assistant work; JavaScript and web development in my public projects. Always learning, building, and refining.</sub>
 
-### About
+### GitHub at a Glance
 
-I'm V. Vrajesh. I enjoy building software and exploring systems biology, AI, and interactive education. Currently focused on projects that turn complex concepts into intuitive tools.
+<img src="./assets/stats.svg" alt="Public repository count, stars received, and contribution activity for Vraj-cyber" width="100%" />
 
-### GitHub at a glance
+<img src="./assets/languages.svg" alt="Most-used languages by code bytes in owned, non-fork public repositories" width="100%" />
 
-<div align="center">
-  <img alt="Dynamic GitHub statistics for Vraj-cyber" src="https://github-readme-stats.vercel.app/api?username=Vraj-cyber&show_icons=true&hide_border=true&bg_color=0B1521&title_color=67D8D4&text_color=D8E7EE&icon_color=67D8D4&include_all_commits=true" height="155" />
-  <img alt="GitHub languages based on public repositories" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Vraj-cyber&layout=compact&hide_border=true&bg_color=0B1521&title_color=67D8D4&text_color=D8E7EE&langs_count=6" height="155" />
-</div>
-
-<sub>These cards load live data from a third-party statistics service. Languages reflect repository code, not personal proficiency; cards can occasionally be unavailable due to service limits.</sub>
+<sub>Refreshed daily from GitHub's APIs. Stars count owned, non-fork public repositories. Contributions cover GitHub's past-year calendar; languages describe public code, not proficiency. [Data](./assets/stats.json) · [Update status](https://github.com/Vraj-cyber/Vraj-cyber/actions/workflows/profile-3d.yml)</sub>
 
 ### Contributions in 3D
 
-<div align="center">
-  <img src="./profile-3d-contrib/profile-night-green.svg" alt="3D GitHub contribution calendar, generated daily by GitHub Actions" width="100%" />
-</div>
+<img src="./profile-3d-contrib/profile-night-green.svg" alt="Real GitHub contribution history in a dark isometric calendar" width="100%" />
 
-<sub>The graph appears after the first successful workflow run. It refreshes daily.</sub>
+<sub>Generated daily with [github-profile-3d-contrib](https://github.com/yoshi389111/github-profile-3d-contrib), using GitHub's automatically scoped token.</sub>
 
-### What I'm building
+### Currently Building
 
 | Project | Focus | Status |
 |:--|:--|:--|
-| **Nova** | A personal AI assistant with local and cloud capabilities | In development |
-| **Interactive biology learning** | Learning biology through simulations, feedback, and play | In development |
-| **[Personal portfolio](https://github.com/Vraj-cyber/vvrajesh-website-)** | A website bringing together my work and background | Repository available |
+| **Nova — Personal AI Assistant** | A personal assistant combining local and cloud capabilities | Ongoing development; no public repository linked |
+| **BODY//CONTROL** | Interactive systems biology learning through simulations, feedback, and play | Ongoing development; no public repository linked |
+| **[Personal Portfolio Website](https://github.com/Vraj-cyber/vvrajesh-website-)** | A website bringing together my work and background | Public source available |
 
-### Interests & tools
-
-`AI & ML` · `Systems biology` · `Python` · `Interactive learning` · `Web development`
+<br>
 
 ---
 
-<div align="center"><sub>Build thoughtfully. Keep learning.</sub></div>
+<div align="center"><sub><a href="https://github.com/Vraj-cyber">@Vraj-cyber</a> · Build thoughtfully. Keep learning.</sub></div>
