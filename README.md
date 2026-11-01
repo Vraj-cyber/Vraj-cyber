@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/dashboard-8b7bac24d4d5.svg" width="100%" alt="V. Vrajesh (@Vraj-cyber). AI, bioengineering and useful software. Dashboard with real GitHub metrics, public code languages and ongoing projects: Nova, BODY//CONTROL and a public portfolio." />
+  <img src="./assets/dashboard-2eac21dff14c.svg" width="100%" alt="V. Vrajesh (@Vraj-cyber). AI, bioengineering and useful software. Dashboard with real GitHub metrics, public code languages and ongoing projects: Nova, BODY//CONTROL and a public portfolio." />
 </p>
 
 <p align="center"><sub><a href="https://github.com/Vraj-cyber?tab=repositories">Repositories</a> · <a href="https://github.com/Vraj-cyber/vvrajesh-website-">Portfolio source</a> · <a href="./assets/stats.json">Live data</a> · <a href="https://github.com/Vraj-cyber/Vraj-cyber/actions/workflows/profile-3d.yml">Daily updates</a></sub></p>
